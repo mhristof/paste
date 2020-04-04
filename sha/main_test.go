@@ -1,4 +1,4 @@
-package base64
+package sha
 
 import (
 	"testing"
@@ -13,14 +13,9 @@ func TestConvert(t *testing.T) {
 		out  string
 	}{
 		{
-			name: "decode from base64",
-			in:   []byte("VGhpcyBpcyBhIHN0cmluZw=="),
-			out:  "This is a string",
-		},
-		{
-			name: "encode to base64",
-			in:   []byte("This is a string"),
-			out:  "VGhpcyBpcyBhIHN0cmluZw==",
+			name: "conver to sha",
+			in:   []byte("this is a string"),
+			out:  "bc7e8a24e2911a5827c9b33d618531ef094937f2b3803a591c625d0ede1fffc6",
 		},
 	}
 

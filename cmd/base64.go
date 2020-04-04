@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/mhristof/paste/base64"
 	"github.com/spf13/cobra"
 )
@@ -12,8 +14,7 @@ var (
 		Long:  "",
 		Run: func(cmd *cobra.Command, args []string) {
 			Verbose(cmd)
-			base64.Base64()
-
+			fmt.Print(base64.Base64())
 		},
 	}
 )
