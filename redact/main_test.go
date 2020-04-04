@@ -74,6 +74,31 @@ func TestConvert(t *testing.T) {
 			in:   []byte("This is a new instance id i-5c7b139248ad47f56"),
 			out:  "This is a new instance id i-1234567890abcdf56",
 		},
+		{
+			name: "IP addresses",
+			in:   []byte("This is an ip address: 127.0.0.1"),
+			out:  "This is an ip address: 123.123.123.123",
+		},
+		{
+			name: "AWS hostname",
+			in:   []byte("Hostname: ip-10-10-10-10.eu-west-1.compute.internal"),
+			out:  "Hostname: ip-123-123-123-10.region.service.internal",
+		},
+		{
+			name: "UUID",
+			in:   []byte("UUID: 52bcbc59-e76f-4893-8beb-fc6f4923b81b"),
+			out:  "UUID: 6433cfdf-43fa-4706-bdec-4d0b7872a68f",
+		},
+		{
+			name: "ARN type 1",
+			in:   []byte("arn:aws:iam::123456789012:user"),
+			out:  "arn:partition:service:region:account-id:resource-id",
+		},
+		// {
+		// 	name: "ARN type 2",
+		// 	in:   []byte("arn:aws:iam::123456789012:user/foobar"),
+		// 	out:  "arn:partition:service:region:account-id:resource-type/resource-id",
+		// },
 	}
 
 	for _, tt := range cases {
