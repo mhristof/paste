@@ -21,6 +21,44 @@ func TestConvert(t *testing.T) {
 				    "this": "that"
 				}`),
 		},
+		{
+			name: "valid json input with list",
+			in:   []byte(`["this", "that"]`),
+			out: heredoc.Doc(`
+				[
+				    "this",
+				    "that"
+				]`),
+		},
+		{
+			name: "Invalid json input",
+			in:   []byte(`this is not json`),
+			out:  "this is not json",
+		},
+		{
+			name: "Python output with single quotes",
+			in:   []byte(`{'this': 'that'}`),
+			out: heredoc.Doc(`
+				{
+				    "this": "that"
+				}`),
+		},
+		{
+			name: "Escaped json",
+			in:   []byte(`{    \"this\": \"that\"}`),
+			out: heredoc.Doc(`
+				{
+				    "this": "that"
+				}`),
+		},
+		{
+			name: "quoted escaped json",
+			in:   []byte(`"{    \"this\": \"that\"}"`),
+			out: heredoc.Doc(`
+				{
+				    "this": "that"
+				}`),
+		},
 	}
 
 	for _, tt := range cases {
