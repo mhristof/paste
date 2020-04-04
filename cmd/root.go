@@ -11,7 +11,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "paste",
 	Short: "Manipulate the clipboard",
-	Long:  `TODO: changeme`,
+	Long:  `Input transformation`,
 	Run: func(cmd *cobra.Command, args []string) {
 		Verbose(cmd)
 	},
