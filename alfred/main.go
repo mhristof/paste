@@ -6,14 +6,14 @@ import (
 )
 
 type ScriptFilter struct {
-	Items []ScriptFilterItem
+	Items []ScriptFilterItem `json:"items"`
 }
 
 type ScriptFilterItem struct {
-	UID      string `json:"uid"`
-	Arg      string
-	Title    string
-	Subtitle string
+	UID      string `json:"uid,omitempty"`
+	Arg      string `json:"arg,omitempty"`
+	Title    string `json:"title,omitempty"`
+	Subtitle string `json:"subtitle,omitempty"`
 }
 
 func (sf *ScriptFilter) Add(title, subtitle string) {
