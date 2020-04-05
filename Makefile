@@ -21,7 +21,7 @@ paste: $(shell find ./ -name '*.go')
 	go build $(BUILD_FLAGS) -o paste main.go
 
 zip: paste
-	zip -r paste.alfredworkflow info.plist paste 
+	zip -r paste.alfredworkflow info.plist paste paste.sh
 
 v%:
 	git tag v$*
