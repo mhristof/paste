@@ -53,7 +53,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-                <string>pbpaste | ./paste.sh {query}</string>
+                <string>pbpaste | ./paste {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -96,7 +96,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-                <string>./paste alfred</string>
+                <string>./paste.sh alfred</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
