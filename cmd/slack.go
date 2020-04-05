@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/mhristof/paste/slack"
 	"github.com/spf13/cobra"
 )
@@ -12,7 +14,7 @@ var (
 		Long:  "",
 		Run: func(cmd *cobra.Command, args []string) {
 			Verbose(cmd)
-			slack.Slack()
+			fmt.Println(slack.Slack())
 		},
 	}
 )

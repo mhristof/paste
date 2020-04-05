@@ -23,5 +23,9 @@ paste: $(shell find ./ -name '*.go')
 zip: paste
 	zip -r paste.alfredworkflow info.plist paste 
 
+v%:
+	git tag v$*
+	git push --tags
+
 help:           ## Show this help.
 	@grep '.*:.*##' Makefile | grep -v grep  | sort | sed 's/:.*## /:/g' | column -t -s:
