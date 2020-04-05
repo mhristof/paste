@@ -25,7 +25,7 @@ jobs:
           draft: false
           prerelease: false
       - name: build the release zip
-        run: make zip GIT_COMMIT=${{ github.ref }}
+        run: make zip GIT_COMMIT=$(basename ${{ github.ref }})
         env:
           GOOS: darwin
           GOARCH: amd64
