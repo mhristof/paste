@@ -20,7 +20,7 @@ func TestConvert(t *testing.T) {
         		"SessionToken": "token",
         		"AccessKeyId": "access"`,
 			)),
-			out: "export AWS_SECRET_KEY_ID='secret' AWS_ACCESS_KEY_ID='access' AWS_SESSION_TOKEN='token'",
+			out: "export AWS_SECRET_ACCESS_KEY='secret' AWS_ACCESS_KEY_ID='access' AWS_SESSION_TOKEN='token'",
 		},
 	}
 
