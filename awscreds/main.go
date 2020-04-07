@@ -41,10 +41,8 @@ func convert(lines []byte) string {
 func findItem(lines string, regex string, name string) string {
 	secret := regexp.MustCompile(regex)
 	for _, line := range strings.Split(string(lines), "\n") {
-		fmt.Println("currently at:", string(line))
 		res := secret.FindStringSubmatch(string(line))
 		for i, thisName := range secret.SubexpNames() {
-			fmt.Println(i, thisName)
 			if len(res) < i {
 				break
 			}
