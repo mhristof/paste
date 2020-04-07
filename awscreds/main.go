@@ -24,7 +24,7 @@ func convert(lines []byte) string {
 
 	ret := "export"
 	if secretKey != "" {
-		ret = fmt.Sprintf("%s AWS_SECRET_KEY_ID='%s'", ret, secretKey)
+		ret = fmt.Sprintf("%s AWS_SECRET_ACCESS_KEY='%s'", ret, secretKey)
 	}
 
 	if accessKey != "" {
