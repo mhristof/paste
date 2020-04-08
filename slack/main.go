@@ -20,7 +20,7 @@ func convert(lines []byte) string {
 	multiline := len(strings.Split(string(lines), "\n")) > 1
 
 	if multiline {
-		return fmt.Sprintf("```\n%s\n```", string(lines))
+		return fmt.Sprintf("```\n%s\n```\n", string(lines))
 	}
 
 	return fmt.Sprintf("`%s`", string(lines))

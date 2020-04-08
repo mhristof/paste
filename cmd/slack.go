@@ -14,7 +14,7 @@ var (
 		Long:  "",
 		Run: func(cmd *cobra.Command, args []string) {
 			Verbose(cmd)
-			fmt.Println(slack.Slack())
+			fmt.Print(slack.Slack())
 		},
 	}
 )

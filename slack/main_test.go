@@ -20,7 +20,7 @@ func TestConvert(t *testing.T) {
 		{
 			name: "multiline line code",
 			in:   []byte("line one\nline two"),
-			out:  "```\nline one\nline two\n```",
+			out:  "```\nline one\nline two\n```\n",
 		},
 	}
 
