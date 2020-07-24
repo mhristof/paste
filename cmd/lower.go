@@ -19,7 +19,7 @@ var (
 			if err != nil {
 				panic(err)
 			}
-			fmt.Println(strings.ToLower(string(data)))
+			fmt.Print(strings.ToLower(string(data)))
 		},
 	}
 )
