@@ -35,6 +35,32 @@ func convert(lines []byte) string {
 		ret = fmt.Sprintf("%s AWS_SESSION_TOKEN='%s'", ret, sessionToken)
 	}
 
+	if ret == "export" {
+		id := false
+		key := false
+		for _, line := range strings.Split(string(lines), "\n") {
+			if id {
+				ret = fmt.Sprintf("%s AWS_ACCESS_KEY_ID='%s'", ret, line)
+			}
+
+			if key {
+				ret = fmt.Sprintf("%s AWS_SECRET_ACCESS_KEY='%s'", ret, line)
+			}
+
+			if line == "Access Key ID:" {
+				id = true
+			} else {
+				id = false
+			}
+
+			if line == "Secret Access Key:" {
+				key = true
+			} else {
+				key = false
+			}
+		}
+	}
+
 	return ret
 }
 

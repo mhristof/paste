@@ -22,6 +22,16 @@ func TestConvert(t *testing.T) {
 			)),
 			out: "export AWS_SECRET_ACCESS_KEY='secret' AWS_ACCESS_KEY_ID='access' AWS_SESSION_TOKEN='token'",
 		},
+		{
+			name: "root creds from the console",
+			in: []byte(heredoc.Doc(`
+				Access Key ID:
+				access
+				Secret Access Key:
+				secret
+			`)),
+			out: "export AWS_ACCESS_KEY_ID='access' AWS_SECRET_ACCESS_KEY='secret'",
+		},
 	}
 
 	for _, tt := range cases {
