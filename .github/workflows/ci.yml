@@ -1,0 +1,21 @@
+---
+name: ci
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make test
+      - run: make zip
+  automerge:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: mhristof/github-action-automerge@v1.0.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
